@@ -1,7 +1,7 @@
 import math
 
 def f(x):
-    return 2 * math.exp(x) * math.sin(x) - 3 # Define the function
+    return math.exp(x) + (2 ** -x) + (2 * math.cos(x)) - 6
 
 def find_interval(a, b, step):
     while f(a) * f(b) >= 0:
@@ -28,8 +28,8 @@ def regula_falsi(a, b, tol=1e-6, max_iter=100):
 
     raise ValueError("Max iterations reached without convergence.")
 
-initial_a = 0.0
-initial_b = 1.0
+initial_a = 1.0
+initial_b = 2.0
 step = 0.1
 
 a, b = find_interval(initial_a, initial_b, step)
