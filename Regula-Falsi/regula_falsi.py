@@ -1,5 +1,7 @@
+import math
+
 def f(x):
-    return x**3 - 4*x - 9  # Define the function
+    return 2 * math.exp(x) * math.sin(x) - 3 # Define the function
 
 def find_interval(a, b, step):
     while f(a) * f(b) >= 0:
@@ -14,7 +16,7 @@ def regula_falsi(a, b, tol=1e-6, max_iter=100):
 
     for i in range(max_iter):
         c = (a * f(b) - b * f(a)) / (f(b) - f(a))  # False position formula
-        
+
         if abs(f(c)) < tol:  # Check convergence
             return c
 
