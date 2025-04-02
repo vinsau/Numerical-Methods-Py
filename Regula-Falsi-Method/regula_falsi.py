@@ -20,7 +20,7 @@ def regula_falsi(a, b, tol=1e-6, max_iter=100):
     for i in range(max_iter):
         # Compute the false position using linear interpolation
         c = (a * f(b) - b * f(a)) / (f(b) - f(a))
-
+        print(f"{i+1}: f(a): {f(a)}    |   f(b): {f(b)}    |   f(c): {f(c)} ")
         # If the function value is close enough to zero, return the root
         if abs(f(c)) < tol:
             return c
