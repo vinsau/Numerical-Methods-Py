@@ -17,7 +17,7 @@ def secant_method(x0, x1, tol=1e-6, max_iter=100):
         # Compute new approximation using secant formula
         x2 = x1 - f_x1 * ((x1 - x0) / (f_x1 - f_x0))
         
-        print(f"{i + 1}: x0= {x0}   | x1= {x1}  | x2= {x2}  | f(x2)= {f(x2)}")
+        print(f"{i + 1}: x2= {x2}  | f(x2)= {f(x2)}")
         
         # Check if the result is within the tolerance
         if abs(f(x2)) < tol:
