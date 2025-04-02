@@ -27,7 +27,6 @@ def newton_method(x0, tol=1e-6, max_iter=100):
     
     raise ValueError("Max iterations reached without convergence.")
 
-# Example usage
-initial_guess = 0.0
+initial_guess = 5.0 # <<<<--- Modify this guess
 root = newton_method(initial_guess)
 print(f"Root: {root:.6f}")
