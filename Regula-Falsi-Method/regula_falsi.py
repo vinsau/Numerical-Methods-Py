@@ -1,4 +1,4 @@
-#REGULA FALSI METHOD
+# REGULA FALSI METHOD
 # Author: gauciv
 
 import math
