@@ -20,7 +20,7 @@ def bisection_method(a, b, tol=1e-6, max_iter=100):
         raise ValueError("Invalid initial interval: f(a) and f(b) must have opposite signs.")
 
     for i in range(max_iter):
-        c = (a + b) / 2  # Compute midpoint
+        c = (a + b) / 2  # Calculate midpoint
         print(f"{i+1}: f(c): {f(c)} ")
         if abs(f(c)) < tol:  # Check if f(c) is close to zero
             return c
