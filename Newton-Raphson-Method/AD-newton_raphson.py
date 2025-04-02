@@ -1,4 +1,6 @@
 # THIS CODE AUTOMATICALLY DERIVES F WITH GRAD FUNCTION FROM AUTOGRAD
+# NEWTON-RAPHSON METHOD
+# Author: gauciv
 
 import autograd.numpy as np
 from autograd import grad

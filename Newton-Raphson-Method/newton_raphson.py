@@ -1,3 +1,6 @@
+# NEWTON-RAPHSON METHOD
+# Author: gauciv
+
 import math
 
 # Define the function whose root we want to find

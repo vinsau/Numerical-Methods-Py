@@ -1,3 +1,6 @@
+#REGULA FALSI METHOD
+# Author: gauciv
+
 import math
 
 # Define the function whose root we're finding
