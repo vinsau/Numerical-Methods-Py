@@ -2,6 +2,36 @@
 # Author: gauciv
 
 import math
+import time
+import os
+import platform
+
+def clear_screen():
+    if platform.system() == "Windows":
+        os.system("cls")  # Command for clearing the screen on Windows
+    else:
+        os.system("clear")  # Command for clearing the screen on Linux/macOS
+
+def gimmicks():
+    def countdown(message, value, end = "[SUCCESS!]"):
+        clear_screen()
+        print(message)
+        for i in range(value, 0, -1):
+            print(i)
+            time.sleep(0.5)
+        
+        print(end)
+        
+    countdown("Starting program...", 3)
+    time.sleep(1)
+    countdown("Declaring initial variables...", 3)
+    time.sleep(1)
+    countdown("Finding correct interval...", 3)
+    time.sleep(1)
+    countdown("Computing root...", 5)
+    time.sleep(1)
+    countdown("Preparing to display table...", 3)
+    time.sleep(1)
 
 # Define the function whose root we're finding
 def f(x):
@@ -9,6 +39,7 @@ def f(x):
 
 # Secant method for finding the root of f(x)
 def secant_method(x0, x1, tol=1e-6, max_iter=100):
+    clear_screen()
     print(f"{'[SECANT METHOD]':>30}")
 
     print("-" * 49)
@@ -36,6 +67,8 @@ def secant_method(x0, x1, tol=1e-6, max_iter=100):
 
 initial_x0 = 0.0  # First initial guess
 initial_x1 = 1.0  # Second initial guess
+
+gimmicks()
 
 root = secant_method(initial_x0, initial_x1)
 print("-" * 49)
