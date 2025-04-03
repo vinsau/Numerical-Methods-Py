@@ -19,7 +19,7 @@ def newton_method(x0, tol=1e-6, max_iter=100):
         fx = f(x)  # Evaluate function
         dfx = df(x)  # Evaluate derivative
         
-        print(f"{i}: x:{x} || fx:{fx} || dfx:{dfx}")
+        print(f"{i+1}: x = {x}    |   fx = {fx}   |   dfx = {dfx}")
 
         if abs(fx) < tol:  # Check convergence
             return x
@@ -32,6 +32,6 @@ def newton_method(x0, tol=1e-6, max_iter=100):
     raise ValueError("Max iterations reached without convergence.")
 
 # Example usage
-initial_guess = 0.0
+initial_guess = 5.0
 root = newton_method(initial_guess)
 print(f"Root: {root:.6f}")

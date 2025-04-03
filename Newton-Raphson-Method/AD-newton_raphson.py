@@ -18,7 +18,7 @@ def newton_method(x0, tol=1e-6, max_iter=100):
     for i in range(max_iter):
         fx = f(x)  # Evaluate function
         dfx = df(x)  # Evaluate derivative
-        print(f"{i}: x:{x} || f(x):{fx} || f'(x):{dfx}")
+        print(f"{i+1}: x = {x}    |   fx = {fx}   |   dfx = {dfx}")
         
         if np.abs(fx) < tol:  # Check convergence
             return x

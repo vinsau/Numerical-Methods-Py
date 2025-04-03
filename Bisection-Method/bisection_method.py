@@ -21,7 +21,7 @@ def bisection_method(a, b, tol=1e-6, max_iter=100):
 
     for i in range(max_iter):
         c = (a + b) / 2  # Calculate midpoint
-        print(f"{i+1}: f(c): {f(c)} ")
+        print(f"{i+1}: c = {c}  |   f(c): {f(c)} ")
         if abs(f(c)) < tol:  # Check if f(c) is close to zero
             return c
 
