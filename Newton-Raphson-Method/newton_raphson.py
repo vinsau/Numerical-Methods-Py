@@ -13,13 +13,17 @@ def df(x):
 
 # Newton-Raphson method for finding roots
 def newton_method(x0, tol=1e-6, max_iter=100):
-    x = x0  
-    
+    x = x0
+
+    print(f"{'[NEWTON-RAPHSON]':>42}")
+    print("-" * 69)
+
     for i in range(max_iter):
         fx = f(x)  # Evaluate function
         dfx = df(x)  # Evaluate derivative
         
-        print(f"{i+1}: x = {x}    |   fx = {fx}   |   dfx = {dfx}")
+        print(f"| {i+1:>2} | x = {x:12.6f} | f(x) = {fx:12.6f} | df(x): {dfx:12.6f} |")
+
 
         if abs(fx) < tol:  # Check convergence
             return x
@@ -34,4 +38,6 @@ def newton_method(x0, tol=1e-6, max_iter=100):
 # Example usage
 initial_guess = 5.0
 root = newton_method(initial_guess)
-print(f"Root: {root:.6f}")
+print("-" * 69)
+print(f"\nRoot: {root:.6f}")
+print("=" * 14)

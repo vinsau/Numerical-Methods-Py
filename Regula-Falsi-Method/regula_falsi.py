@@ -16,14 +16,19 @@ def find_interval(a, b, step):
 
 # Regula Falsi (False Position) method for root finding
 def regula_falsi(a, b, tol=1e-6, max_iter=100):
+    print(f"{'[REGULA FALSI]':>30}")
     # Ensure the initial interval is valid
     if f(a) * f(b) >= 0:
         raise ValueError("Invalid initial interval: f(a) and f(b) must have opposite signs.")
+    
+    print("-" * 47)
 
     for i in range(max_iter):
         # Compute the false position using linear interpolation
         c = (a * f(b) - b * f(a)) / (f(b) - f(a))
-        print(f"{i+1}: c = {c}  |   f(c): {f(c)} ")
+
+        print(f"| {i+1:>2} | c = {c:12.6f} | f(c) = {f(c):12.6f} |")
+
         # If the function value is close enough to zero, return the root
         if abs(f(c)) < tol:
             return c
@@ -44,4 +49,6 @@ step = 0.1
 # Find a valid interval and compute the root
 a, b = find_interval(initial_a, initial_b, step)
 root = regula_falsi(a, b)
-print(f"Root: {root:.6f}")
+print("-" * 47)
+print(f"\nRoot: {root:.6f}")
+print("=" * 14)

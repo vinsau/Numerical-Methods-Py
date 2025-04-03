@@ -9,6 +9,9 @@ def f(x):
 
 # Secant method for finding the root of f(x)
 def secant_method(x0, x1, tol=1e-6, max_iter=100):
+    print(f"{'[SECANT METHOD]':>30}")
+
+    print("-" * 49)
     for i in range(max_iter):
         f_x0 = f(x0)
         f_x1 = f(x1)
@@ -20,7 +23,7 @@ def secant_method(x0, x1, tol=1e-6, max_iter=100):
         # Compute new approximation using secant formula
         x2 = x1 - f_x1 * ((x1 - x0) / (f_x1 - f_x0))
         
-        print(f"{i + 1}: x2= {x2}  | f(x2)= {f(x2)}")
+        print(f"| {i+1:>2} | x2 = {x2:12.6f} | f(x2) = {f(x2):12.6f} |")
         
         # Check if the result is within the tolerance
         if abs(f(x2)) < tol:
@@ -35,4 +38,6 @@ initial_x0 = 0.0  # First initial guess
 initial_x1 = 1.0  # Second initial guess
 
 root = secant_method(initial_x0, initial_x1)
-print(f"Root: {root:.6f}")
+print("-" * 49)
+print(f"\nRoot: {root:.6f}")
+print("=" * 14)

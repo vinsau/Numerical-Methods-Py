@@ -5,7 +5,7 @@ import math
 
 # Define the function whose root we want to find
 def f(x):
-    return math.exp(x) + (2 ** -x) + (2 * math.cos(x)) - 6 # <<<<--- Modify this part
+    return math.exp(x) + (2 ** -x) + (2 * math.cos(x)) - 6
 
 # Find a valid interval [a, b] where f(a) and f(b) have opposite signs
 def find_interval(a, b, step):
@@ -18,10 +18,15 @@ def find_interval(a, b, step):
 def bisection_method(a, b, tol=1e-6, max_iter=100):
     if f(a) * f(b) >= 0:
         raise ValueError("Invalid initial interval: f(a) and f(b) must have opposite signs.")
+    
+    print(f"{'[BISECTION]':>28}")
+    print("-" * 48)
 
     for i in range(max_iter):
         c = (a + b) / 2  # Calculate midpoint
-        print(f"{i+1}: c = {c}  |   f(c): {f(c)} ")
+
+        print(f"| {i+1:>3} | c = {c:12.6f} | f(c) = {f(c):12.6f} |")
+
         if abs(f(c)) < tol:  # Check if f(c) is close to zero
             return c
 
@@ -41,4 +46,7 @@ step = 0.1
 # Find a valid interval and compute the root
 a, b = find_interval(initial_a, initial_b, step)
 root = bisection_method(a, b)
-print(f"Root: {root:.6f}")
+
+print("-" * 48)
+print(f"\nRoot: {root:.6f}")
+print("=" * 14)
