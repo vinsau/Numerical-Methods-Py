@@ -12,27 +12,6 @@ def clear_screen():
     else:
         os.system("clear")  # Command for clearing the screen on Linux/macOS
 
-def gimmicks():
-    def countdown(message, value, end = "[SUCCESS!]"):
-        clear_screen()
-        print(message)
-        for i in range(value, 0, -1):
-            print(i)
-            time.sleep(0.5)
-        
-        print(end)
-        
-    countdown("Starting program...", 3)
-    time.sleep(1)
-    countdown("Declaring initial variables...", 3)
-    time.sleep(1)
-    countdown("Finding correct interval...", 3)
-    time.sleep(1)
-    countdown("Computing root...", 5)
-    time.sleep(1)
-    countdown("Preparing to display table...", 3)
-    time.sleep(1)
-
 # Define the function whose root we want to find
 def f(x):
     return math.exp(x) + (2 ** -x) + (2 * math.cos(x)) - 6 # <<<<--- Modify this part
@@ -67,7 +46,6 @@ def newton_method(x0, tol=1e-6, max_iter=100):
 
 # Example usage
 initial_guess = 5.0
-gimmicks()
 root = newton_method(initial_guess)
 
 print("-" * 69)

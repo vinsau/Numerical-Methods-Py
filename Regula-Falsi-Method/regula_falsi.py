@@ -51,34 +51,10 @@ def regula_falsi(a, b, tol=1e-6, max_iter=100):
 
     raise ValueError("Max iterations reached without convergence.")
 
-# Just for fun
-def gimmicks():
-    def countdown(message, value, end = "[SUCCESS!]"):
-        clear_screen()
-        print(message)
-        for i in range(value, 0, -1):
-            print(i)
-            time.sleep(0.5)
-        
-        print(end)
-        
-    countdown("Starting program...", 3)
-    time.sleep(1)
-    countdown("Declaring initial variables...", 3)
-    time.sleep(1)
-    countdown("Finding correct interval...", 3)
-    time.sleep(1)
-    countdown("Computing root...", 5)
-    time.sleep(1)
-    countdown("Preparing to display table...", 3)
-    time.sleep(1)
-
 # Initial guesses and step for finding a valid interval
 initial_a = 0.0
 initial_b = 1.0
 step = 0.1
-
-gimmicks()
 
 # Find a valid interval and compute the root
 a, b = find_interval(initial_a, initial_b, step)

@@ -4,7 +4,6 @@
 
 import autograd.numpy as np
 from autograd import grad
-import time
 import os
 import platform
 
@@ -13,27 +12,6 @@ def clear_screen():
         os.system("cls")  # Command for clearing the screen on Windows
     else:
         os.system("clear")  # Command for clearing the screen on Linux/macOS
-
-def gimmicks():
-    def countdown(message, value, end = "[SUCCESS!]"):
-        clear_screen()
-        print(message)
-        for i in range(value, 0, -1):
-            print(i)
-            time.sleep(0.5)
-        
-        print(end)
-        
-    countdown("Starting program...", 3)
-    time.sleep(1)
-    countdown("Declaring initial variables...", 3)
-    time.sleep(1)
-    countdown("Finding correct interval...", 3)
-    time.sleep(1)
-    countdown("Computing root...", 5)
-    time.sleep(1)
-    countdown("Preparing to display table...", 3)
-    time.sleep(1)
 
 # Define the function whose root we want to find
 def f(x):
@@ -67,7 +45,6 @@ def newton_method(x0, tol=1e-6, max_iter=100):
     raise ValueError("Max iterations reached without convergence.")
 
 initial_guess = 5.0 # <<<<--- Modify this guess
-gimmicks()
 root = newton_method(initial_guess)
 print("-" * 69)
 print(f"\nRoot: {root:.6f}")
