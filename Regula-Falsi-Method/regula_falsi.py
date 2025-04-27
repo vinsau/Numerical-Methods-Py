@@ -2,7 +2,6 @@
 # Author: gauciv
 
 import math
-import time
 import os
 import platform
 

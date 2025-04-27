@@ -2,8 +2,8 @@
 # NEWTON-RAPHSON METHOD
 # Author: gauciv
 
-import autograd.numpy as np
-from autograd import grad
+import autograd.numpy as np # type: ignore
+from autograd import grad # type: ignore
 import os
 import platform
 
